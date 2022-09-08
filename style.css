@@ -1,0 +1,66 @@
+body { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(244, 244, 244);
+}
+
+form { 
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2.25rem;
+  box-shadow: -12px 1px 20px rgba(0, 0, 0, 0.09);
+  background-color: white;
+  border-radius: 5px;
+
+}
+
+.input-field { 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+}
+
+.input-field label { 
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.input-field input { 
+  /* background-color: rgb(250, 250, 250); */
+  border: none;
+  border-bottom: 1px solid rgb(209, 209, 209);
+  outline: none;
+  padding: .5rem;
+}
+
+form button { 
+  border: none;
+  outline: none;
+  padding: .75rem;
+  border-radius: 3px;
+  font-family: inherit;
+} 
+
+form button:hover { 
+  background-color: rgb(220, 220, 220);
+}
+
+form button:focus { 
+  background-color: rgb(210, 210, 210);
+}
+
+.success input { 
+  border: 1px solid rgb(34, 228, 98);
+}
+
+.error input { 
+  border-bottom: 1px solid rgb(228, 50, 34);
+}
+
