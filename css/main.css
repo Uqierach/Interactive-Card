@@ -1,0 +1,198 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100vw;
+  min-height: 100vh;
+}
+main .main-bg-area {
+  width: 100%;
+  height: 240px;
+}
+main .main-bg-area picture {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+main .main-bg-area .main-card {
+  position: relative;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 240px;
+  display: flex;
+}
+main .main-bg-area .main-card .main-card-front {
+  width: 270px;
+  height: 150px;
+  position: absolute;
+  z-index: 2;
+  left: 4%;
+  top: 53%;
+  right: 0;
+  bottom: 0;
+  color: white;
+}
+main .main-bg-area .main-card .main-card-front .text-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 2rem 1rem;
+  gap: 1rem;
+}
+main .main-bg-area .main-card .main-card-front .text-area .circle-area {
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  right: 0;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+}
+main .main-bg-area .main-card .main-card-front .text-area .card-number {
+  width: 100%;
+  letter-spacing: 2px;
+}
+main .main-bg-area .main-card .main-card-front .text-area .cardholder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 4rem;
+  width: 100%;
+}
+main .main-bg-area .main-card .main-card-front .text-area .cardholder-name {
+  font-family: inherit;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: hsl(0deg, 0%, 100%);
+}
+main .main-bg-area .main-card .main-card-front .text-area .cardholder .exp-date {
+  font-family: inherit;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: hsl(0deg, 0%, 100%);
+}
+main .main-bg-area .main-card .main-card-front .card-front {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 7px 15px 43px -8px rgba(0, 0, 0, 0.31);
+}
+main .main-bg-area .main-card .main-card-back {
+  position: absolute;
+  z-index: 1;
+  left: 23%;
+  top: 7%;
+  right: 0;
+  bottom: 0;
+}
+main .main-bg-area .main-card .main-card-back .card-back {
+  width: 270px;
+  height: 150px;
+  z-index: -1;
+}
+main form#form {
+  padding: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+}
+main form#form .third {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+main form#form .third .input-exp-date {
+  width: 50%;
+}
+main form#form .third .input-exp-date .exp-date-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+main form#form .third .input-exp-date .exp-date-area :nth-child(1),
+main form#form .third .input-exp-date .exp-date-area :nth-child(2) {
+  max-width: 50%;
+}
+main form#form .third .input-cvc {
+  display: flex;
+  align-self: flex-start;
+}
+main form#form :not(.input-field:nth-child(3)) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+main form#form :not(.input-field:nth-child(3)) label {
+  font-family: inherit;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: hsl(278deg, 68%, 11%);
+  margin-bottom: 0.5rem;
+}
+main form#form :not(.input-field:nth-child(3)) input {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  text-transform: -transf;
+  letter-spacing: 1px;
+  color: gray;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid hsl(270deg, 3%, 87%);
+  transition: 400ms ease-in-out;
+  outline-color: hsl(270deg, 3%, 87%);
+}
+main form#form :not(.input-field:nth-child(3)) input::-moz-placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+main form#form :not(.input-field:nth-child(3)) input:-ms-input-placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+main form#form :not(.input-field:nth-child(3)) input::placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+main form#form :not(.input-field:nth-child(3)) input:focus {
+  outline-color: hsl(249deg, 99%, 64%);
+}
+
+@media screen and (min-width: 376px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}/*# sourceMappingURL=main.css.map */
