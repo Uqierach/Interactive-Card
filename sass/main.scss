@@ -11,10 +11,15 @@ $border-active:  linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%
 $font-default: 'Space Grotesk', sans-serif;
 
 * { 
-  padding: 0;
+  // padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: $font-default;
+  letter-spacing: 1px;
+}
+
+::-webkit-scrollbar { 
+  display: none;
 }
 
 // main code starts 
@@ -22,33 +27,43 @@ $font-default: 'Space Grotesk', sans-serif;
 main  {
   @include flex-preset(column);
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
+  // min-height: 100vh;
 
 
   .main-bg-area { 
     width: 100%;
-    height: 240px;
+    height: 40%;
+    max-height: 350px;
 
     picture { 
       @include card-preset(absolute, -1);
+
+      img { 
+        width: 100%;
+        max-height: 350px;
+      }
     }
 
     .main-card {
       @include card-preset(relative, 0 , 0, 0, 0, 0);
       width: 100%; 
-      height: 240px;
+      height: 100%;
       display: flex;
 
       .main-card-front {
-        @include image-preset(270px, 150px);
-        @include card-preset(absolute, 2, 4%, 53%);
+        @include card-preset(absolute, 2);
+        width: 270px;
+        height: 150px;
+        
+        transform: translate(10%, 75%);
         color: white;
-
+        
         .text-area {
           @include flex-preset(column, flex-end, flex-start);
-
+          
           position: absolute;  
-          bottom: 0;
+          top: 0;
           left: 0;
           width: 100%;
           height: 100%;
@@ -58,7 +73,7 @@ main  {
 
           .circle-area { 
             @include position-preset(absolute, 8%, 10%, 0, 0);
-
+            
             width: 24px;
             height: 24px;
             background-color: $white;
@@ -88,19 +103,31 @@ main  {
         }
         
         .card-front { 
+          @include image-preset(100%, 100%);
           z-index: -1;
-          width: 100%;
-          height: 100%;
           box-shadow: 7px 15px 43px -8px rgba(0,0,0,0.31);
         }
       }
       
       .main-card-back { 
-        @include card-preset(absolute, 1, 23%, 7%);
-        
+        @include card-preset(absolute, 1);
+        width: 270px;
+        height: 150px;
+        transform: translate(30%, 16%);
+
+        p.random-number { 
+          bottom: 0;
+          right: 0;
+          transform: translate(-100%, -380%);
+          position: absolute;
+          color: white;
+          font-size: 14px;
+        }
+
         .card-back { 
-          @include image-preset(270px, 150px);
+          @include image-preset(100%, 100%);
           z-index: -1;
+          box-shadow: 7px 15px 43px -8px rgba(0,0,0,0.31);
         }
       }
       
@@ -112,6 +139,8 @@ main  {
     padding: 2rem;
     margin-top: 3rem;
     width: 100%;
+    max-width: 500px;
+    margin: 3rem auto;
     
     .third { 
       @include flex-preset(row, flex-start);
@@ -127,10 +156,6 @@ main  {
           :nth-child(1), 
           :nth-child(2) { 
             max-width: 50%;
-          }
-
-          input { 
-            // background-color: red
           }
         }
       }
@@ -152,8 +177,7 @@ main  {
       }
       
       input { 
-        @include font-preset($font-default, 15px, -transf, 1px, gray);
-        
+        @include font-preset($font-default, 15px, none, 1px, gray);
         width: 100%;
         padding:  10px;
         border-radius: 4px;
@@ -173,14 +197,155 @@ main  {
       }
     }
 
+    #button { 
+      @include input-preset(100%, 15px 15px 15px 120px, 8px, inherit, white);
+      text-align: center;      
+      background-color: $darker-violet;
+      outline: none;
+      border: none;
+      position: relative;
+    }
   }
 }
 // main code ends
 
-// Media Queries
 
-@media screen and (min-width: 376px) {
+
+@media screen and (min-width: 768px) {
   main { 
-    @include flex-preset(row, center, center);
+    @include flex-preset(column);
+    height: 100vh;
+    
+    
+    .main-bg-area { 
+      
+      .main-card {
+        @include card-preset(relative, 0, 0, 0, 0, 0);
+        width: 100%; 
+        height: 100%;
+        display: flex;
+        
+        .main-card-front {
+          @include image-preset(370px, 210px);
+          
+          transform: translate(35%, 85%);
+          color: white;
+          
+          .text-area {
+            padding-bottom: 2.5rem;
+            .circle-area { 
+              
+              width: 36px;
+              height: 36px;
+            }
+            
+            .card-number { 
+              @include font-preset(inherit, 20px, none, 3px,white );
+              margin-bottom: 1rem;
+            }
+            
+            .cardholder { 
+              @include flex-preset(row, space-around);
+              gap: 3rem;
+              width: 100%;
+              
+            
+              &-name { 
+                @include font-preset(inherit, 14px, uppercase, 1px, $white);
+              }
+              
+              .exp-date { 
+                @include font-preset(inherit, 14px, uppercase, 1px, $white);
+              }
+            }
+          }
+        }
+
+        .main-card-back { 
+          transform: translate(85%, 25%);
+          position: relative;
+          
+          p.random-number { 
+            transform: translate(150%, -180%);
+            font-size: 16px;
+          }
+
+          .card-back { 
+            @include image-preset(370px, 210px);
+          }
+        }
+      }
+    }
+
+    form#form { 
+      margin-top: 7rem;
+      padding: 0;
+
+
+      :not(.input-field:nth-child(3)) { 
+        margin-bottom: 1rem;
+
+        label { 
+          @include font-preset(inherit, 14px, uppercase, 1px, $darker-violet);
+        }
+
+        input { 
+          @include font-preset($font-default, 18px, none, 1px, gray);
+          padding: 15px;
+        }
+      }
+
+      #button { 
+        padding: 20px 220px 20 20px;
+        padding-left: 220px;
+        font-size: larger;
+      }
+    }    
+  }
+}
+
+
+@media screen and (min-width: 1440px) { 
+  main { 
+    @include flex-preset(row, ); 
+    
+    .main-bg-area {
+      max-width: 30%; 
+      max-height: 100vh;
+      height: 100vh;
+
+      picture { 
+        max-width: 30%;
+        width: 100%;
+
+        img { 
+          width: 100%;
+          height: 100%;
+          max-width: 100%;
+          max-height: 100vh;
+        }
+      }
+
+      .main-card { 
+
+        .main-card-front {
+          @include image-preset(370px, 210px);
+          
+          transform: translate(30%, 100%);
+          color: white;
+        }
+        
+        .main-card-back { 
+          transform: translate(70%, 300%);
+          position: relative;
+        }
+
+
+      }
+    }
+
+    form { 
+      place-self: center;
+    }
   }
 }

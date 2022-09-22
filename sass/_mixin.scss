@@ -28,10 +28,18 @@
 }
 
 
-@mixin font-preset($f-family: inherit, $f-size, $t-transf, $l-spacing:1px, $clr) { 
+@mixin font-preset($f-family: inherit, $f-size, $t-transf:none, $l-spacing:1px, $clr) { 
   font-family: $f-family;
   font-size: $f-size;
   text-transform: $t-transf;
   letter-spacing: $l-spacing;
+  color: $clr;
+}
+
+@mixin input-preset($w, $padd, $b-radius, $f-family, $clr) { 
+  width: $w;
+  padding: $padd;
+  border-radius: $b-radius;
+  font-family: $f-family;
   color: $clr;
 }

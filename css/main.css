@@ -1,8 +1,12 @@
 * {
-  padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 1px;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 main {
@@ -11,11 +15,12 @@ main {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
 }
 main .main-bg-area {
   width: 100%;
-  height: 240px;
+  height: 40%;
+  max-height: 350px;
 }
 main .main-bg-area picture {
   position: absolute;
@@ -25,6 +30,10 @@ main .main-bg-area picture {
   right: 0;
   bottom: 0;
 }
+main .main-bg-area picture img {
+  width: 100%;
+  max-height: 350px;
+}
 main .main-bg-area .main-card {
   position: relative;
   z-index: 0;
@@ -33,18 +42,19 @@ main .main-bg-area .main-card {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 240px;
+  height: 100%;
   display: flex;
 }
 main .main-bg-area .main-card .main-card-front {
-  width: 270px;
-  height: 150px;
   position: absolute;
   z-index: 2;
-  left: 4%;
-  top: 53%;
+  left: 0;
+  top: 0;
   right: 0;
   bottom: 0;
+  width: 270px;
+  height: 150px;
+  transform: translate(10%, 75%);
   color: white;
 }
 main .main-bg-area .main-card .main-card-front .text-area {
@@ -53,7 +63,7 @@ main .main-bg-area .main-card .main-card-front .text-area {
   justify-content: flex-end;
   align-items: flex-start;
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -99,28 +109,42 @@ main .main-bg-area .main-card .main-card-front .text-area .cardholder .exp-date 
   color: hsl(0deg, 0%, 100%);
 }
 main .main-bg-area .main-card .main-card-front .card-front {
-  z-index: -1;
   width: 100%;
   height: 100%;
+  z-index: -1;
   box-shadow: 7px 15px 43px -8px rgba(0, 0, 0, 0.31);
 }
 main .main-bg-area .main-card .main-card-back {
   position: absolute;
   z-index: 1;
-  left: 23%;
-  top: 7%;
+  left: 0;
+  top: 0;
   right: 0;
   bottom: 0;
-}
-main .main-bg-area .main-card .main-card-back .card-back {
   width: 270px;
   height: 150px;
+  transform: translate(30%, 16%);
+}
+main .main-bg-area .main-card .main-card-back p.random-number {
+  bottom: 0;
+  right: 0;
+  transform: translate(-100%, -380%);
+  position: absolute;
+  color: white;
+  font-size: 14px;
+}
+main .main-bg-area .main-card .main-card-back .card-back {
+  width: 100%;
+  height: 100%;
   z-index: -1;
+  box-shadow: 7px 15px 43px -8px rgba(0, 0, 0, 0.31);
 }
 main form#form {
   padding: 2rem;
   margin-top: 3rem;
   width: 100%;
+  max-width: 500px;
+  margin: 3rem auto;
 }
 main form#form .third {
   display: flex;
@@ -165,7 +189,7 @@ main form#form :not(.input-field:nth-child(3)) label {
 main form#form :not(.input-field:nth-child(3)) input {
   font-family: "Space Grotesk", sans-serif;
   font-size: 15px;
-  text-transform: -transf;
+  text-transform: none;
   letter-spacing: 1px;
   color: gray;
   width: 100%;
@@ -187,12 +211,154 @@ main form#form :not(.input-field:nth-child(3)) input::placeholder {
 main form#form :not(.input-field:nth-child(3)) input:focus {
   outline-color: hsl(249deg, 99%, 64%);
 }
+main form#form #button {
+  width: 100%;
+  padding: 15px 15px 15px 120px;
+  border-radius: 8px;
+  font-family: inherit;
+  color: white;
+  text-align: center;
+  background-color: hsl(278deg, 68%, 11%);
+  outline: none;
+  border: none;
+  position: relative;
+}
 
-@media screen and (min-width: 376px) {
+@media screen and (min-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+  }
+  main .main-bg-area .main-card {
+    position: relative;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  main .main-bg-area .main-card .main-card-front {
+    width: 370px;
+    height: 210px;
+    transform: translate(35%, 85%);
+    color: white;
+  }
+  main .main-bg-area .main-card .main-card-front .text-area {
+    padding-bottom: 2.5rem;
+  }
+  main .main-bg-area .main-card .main-card-front .text-area .circle-area {
+    width: 36px;
+    height: 36px;
+  }
+  main .main-bg-area .main-card .main-card-front .text-area .card-number {
+    font-family: inherit;
+    font-size: 20px;
+    text-transform: none;
+    letter-spacing: 3px;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  main .main-bg-area .main-card .main-card-front .text-area .cardholder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 3rem;
+    width: 100%;
+  }
+  main .main-bg-area .main-card .main-card-front .text-area .cardholder-name {
+    font-family: inherit;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: hsl(0deg, 0%, 100%);
+  }
+  main .main-bg-area .main-card .main-card-front .text-area .cardholder .exp-date {
+    font-family: inherit;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: hsl(0deg, 0%, 100%);
+  }
+  main .main-bg-area .main-card .main-card-back {
+    transform: translate(85%, 25%);
+    position: relative;
+  }
+  main .main-bg-area .main-card .main-card-back p.random-number {
+    transform: translate(150%, -180%);
+    font-size: 16px;
+  }
+  main .main-bg-area .main-card .main-card-back .card-back {
+    width: 370px;
+    height: 210px;
+  }
+  main form#form {
+    margin-top: 7rem;
+    padding: 0;
+  }
+  main form#form :not(.input-field:nth-child(3)) {
+    margin-bottom: 1rem;
+  }
+  main form#form :not(.input-field:nth-child(3)) label {
+    font-family: inherit;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: hsl(278deg, 68%, 11%);
+  }
+  main form#form :not(.input-field:nth-child(3)) input {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    text-transform: none;
+    letter-spacing: 1px;
+    color: gray;
+    padding: 15px;
+  }
+  main form#form #button {
+    padding: 20px 220px 20 20px;
+    padding-left: 220px;
+    font-size: larger;
+  }
+}
+@media screen and (min-width: 1440px) {
   main {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  main .main-bg-area {
+    max-width: 30%;
+    max-height: 100vh;
+    height: 100vh;
+  }
+  main .main-bg-area picture {
+    max-width: 30%;
+    width: 100%;
+  }
+  main .main-bg-area picture img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+  }
+  main .main-bg-area .main-card .main-card-front {
+    width: 370px;
+    height: 210px;
+    transform: translate(30%, 100%);
+    color: white;
+  }
+  main .main-bg-area .main-card .main-card-back {
+    transform: translate(70%, 300%);
+    position: relative;
+  }
+  main form {
+    place-self: center;
   }
 }/*# sourceMappingURL=main.css.map */
