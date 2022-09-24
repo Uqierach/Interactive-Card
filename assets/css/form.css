@@ -1,0 +1,128 @@
+@import url("variables.css");
+
+main .form { 
+  margin: 8rem auto;  
+  width: 90%;
+  max-width: 500px;
+  
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 2rem;
+
+}
+
+main .form .input-field { 
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+/* input field third */
+main .form .third { 
+  /* display: flex; */
+  flex-direction: row;
+}
+
+.third .input-exp-date { 
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  width: 55%;
+}
+
+.third .exp-date-area { 
+  display: flex;
+  gap: 1rem;
+}
+
+.third .exp-date-area input { 
+  width: 50%;
+}
+
+.third .input-cvc {
+  display: flex; 
+  flex-direction: column;
+  gap: .75rem;
+  width: 45%;
+}
+/* ends */
+
+main .form .input-field label { 
+  text-transform: uppercase; 
+  font-size: calc(var(--font-med) + 2px);
+  font-weight: 500;
+  color: var(--darker-violet);
+}
+
+main .form .input-field input { 
+  letter-spacing: 1px;
+  font-family: inherit;
+  font-size: var(--font-xl);
+  padding: 12px 15px ;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid var(--light-grayish-violet);
+  color: var(--darker-violet);
+}
+
+.form .input-field input::placeholder { 
+  font-family: inherit;
+  font-size: var(--font-def);
+  color: var(--light-grayish-violet);
+  letter-spacing: 0;
+}
+
+
+#button { 
+  border-radius: 8px;
+  padding: 12px 15px;
+  text-align: center;
+  font-size: var(--font-lg);
+  font-family: inherit;
+  outline: none;
+  background-color: var(--darker-violet);
+  color: white;
+}
+
+
+
+
+/* media queries */
+@media screen and (min-width: 768px) { 
+  main .form { 
+    gap: 2.25rem;
+  }
+  
+  
+  main .form .input-field input { 
+    padding : 15px;
+    font-size: var(--font-lg);
+  }
+}
+
+@media screen and (min-width: 1440px) { 
+    main .form { 
+    max-width: 400px;
+    margin: auto;
+    
+    align-self: flex-end;
+    gap: 2.5rem;
+  }
+
+  
+  main .form .input-field input { 
+    letter-spacing: 2px;
+    font-size: var(--font-xl);
+    padding: 20px;
+  }
+
+  .form .input-field input::placeholder { 
+    font-size: var(--font-med);
+    letter-spacing: 1px;
+  }
+  
+
+}
+
+

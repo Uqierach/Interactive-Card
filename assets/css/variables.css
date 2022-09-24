@@ -1,0 +1,25 @@
+:root { 
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --darker-violet: hsl(278, 68%, 11%);
+  --border-active: hsl(278, 94%, 30%);
+  
+  --font-default: 'Space Grotesk', sans-serif;
+  --font-sm: .75em;
+  --font-def: 1em;
+  --font-med: 1.25em;
+  --font-lg: 1.5em;
+  --font-xl: 1.75em;
+  /* --border-active:  linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)); */
+
+
+  --card-w-mobile: 270px;
+  --card-h-mobile: 150px;
+  
+  --card-w-tablet: 270px;
+  --card-h-tablet: 140px;
+  
+  --card-w-desktop: 420px;
+  --card-h-desktop: 230px;
+}
